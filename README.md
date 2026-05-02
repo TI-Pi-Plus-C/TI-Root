@@ -7,6 +7,9 @@ The calculator will prompt you to type in A=, B=, C=. Once you do hit enter and 
 Warning:
 This program has a massive bug that you may run into if you try to open a system menu while the program is running. The issue has been identified and hopefully will be fixed soon, thank you for you patience.
 
+Building:
+Download the CE programming toolchain. run make while in the source code directory and it should build successfully.
+
 TODO:
 - Fix major bug
 - Add in support for imaginary solutions
