@@ -1,0 +1,411 @@
+	section	.text,"ax",@progbits
+	assume	adl = 1
+	section	.text,"ax",@progbits
+	public	_main
+_main:
+	ld	hl, -125
+	call	__frameset
+	lea	hl, ix - 20
+	ld	(ix - 80), hl
+	lea	hl, ix - 29
+	ld	(ix - 109), hl
+	lea	hl, ix - 38
+	ld	(ix - 112), hl
+	lea	hl, ix - 47
+	ld	(ix - 115), hl
+	lea	hl, ix - 56
+	ld	(ix - 118), hl
+	lea	hl, ix - 65
+	ld	(ix - 121), hl
+	lea	hl, ix - 68
+	ld	(ix - 90), hl
+	lea	hl, ix - 77
+	ld	(ix - 83), hl
+BB0_1:
+	ld	hl, -3145600
+	push	hl
+	pop	iy
+	call	_os_ClrLCD
+	ld	iy, -3145600
+	call	_os_HomeUp
+	call	_os_DrawStatusBar
+	ld	hl, _.str
+	push	hl
+	call	_os_PutStrFull
+	pop	hl
+	ld	iy, -3145600
+	call	_os_NewLine
+	ld	hl, _.str.1
+	push	hl
+	call	_os_PutStrFull
+	pop	hl
+	ld	iy, -3145600
+	call	_os_NewLine
+	ld	hl, 20
+	push	hl
+	ld	hl, (ix - 80)
+	push	hl
+	ld	hl, _.str.2
+	push	hl
+	call	_os_GetStringInput
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	hl, (ix - 90)
+	push	hl
+	ld	hl, (ix - 80)
+	push	hl
+	ld	hl, (ix - 83)
+	push	hl
+	call	_os_StrToReal
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	iy, (ix - 109)
+	lea	de, iy
+	ld	hl, (ix - 83)
+	ld	bc, 9
+	ldir
+	push	iy
+	call	_os_RealToFloat
+	ld	(ix - 93), hl
+	ld	(ix - 96), e
+	pop	hl
+	ld	iy, -3145600
+	call	_os_NewLine
+	ld	hl, 20
+	push	hl
+	ld	hl, (ix - 80)
+	push	hl
+	ld	hl, _.str.3
+	push	hl
+	call	_os_GetStringInput
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	hl, (ix - 90)
+	push	hl
+	ld	hl, (ix - 80)
+	push	hl
+	ld	hl, (ix - 83)
+	push	hl
+	call	_os_StrToReal
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	iy, (ix - 112)
+	lea	de, iy
+	ld	hl, (ix - 83)
+	ld	bc, 9
+	ldir
+	push	iy
+	call	_os_RealToFloat
+	ld	(ix - 86), hl
+	ld	(ix - 87), e
+	pop	hl
+	ld	iy, -3145600
+	call	_os_NewLine
+	ld	hl, 20
+	push	hl
+	ld	hl, (ix - 80)
+	push	hl
+	ld	hl, _.str.4
+	push	hl
+	call	_os_GetStringInput
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	hl, (ix - 90)
+	push	hl
+	ld	hl, (ix - 80)
+	push	hl
+	ld	hl, (ix - 83)
+	push	hl
+	call	_os_StrToReal
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	iy, (ix - 115)
+	lea	de, iy
+	ld	hl, (ix - 83)
+	ld	bc, 9
+	ldir
+	push	iy
+	call	_os_RealToFloat
+	ld	(ix - 99), hl
+	ld	(ix - 100), e
+	pop	hl
+	ld	iy, -3145600
+	call	_os_NewLine
+	ld	bc, (ix - 93)
+	ld	a, (ix - 96)
+	ld	hl, -8388608
+	ld	e, -64
+	call	__fmul
+	ld	hl, (ix - 99)
+	ld	e, (ix - 100)
+	call	__fmul
+	push	bc
+	pop	iy
+	ld	d, a
+	ld	bc, (ix - 86)
+	ld	a, (ix - 87)
+	push	bc
+	pop	hl
+	ld	e, a
+	call	__fmul
+	lea	hl, iy
+	ld	e, d
+	call	__fadd
+	ld	(ix - 103), bc
+	ld	l, a
+	ld	(ix - 106), hl
+	push	hl
+	push	bc
+	call	_sqrt
+	ld	(ix - 124), hl
+	ld	(ix - 125), e
+	pop	hl
+	pop	hl
+	ld	hl, (ix - 106)
+	push	hl
+	ld	hl, (ix - 103)
+	push	hl
+	call	_sqrt
+	ld	(ix - 103), hl
+	ld	(ix - 106), e
+	pop	hl
+	pop	hl
+	ld	iy, -3145600
+	call	_os_NewLine
+	ld	bc, (ix - 93)
+	ld	a, (ix - 96)
+	ld	hl, (ix - 99)
+	ld	e, (ix - 100)
+	call	__fmul
+	ld	hl, -8388608
+	ld	e, -64
+	call	__fmul
+	push	bc
+	pop	iy
+	ld	d, a
+	ld	bc, (ix - 86)
+	ld	a, (ix - 87)
+	push	bc
+	pop	hl
+	ld	e, a
+	call	__fmul
+	lea	hl, iy
+	ld	e, d
+	call	__fadd
+	push	bc
+	pop	hl
+	ld	e, a
+	ld	bc, 0
+	xor	a, a
+	call	__fcmp
+	ld	hl, _.str.6
+	jp	m, BB0_3
+	ld	bc, (ix - 86)
+	ld	a, (ix - 87)
+	ld	hl, -8388608
+	ld	e, -65
+	call	__fmul
+	ld	hl, (ix - 103)
+	ld	e, (ix - 106)
+	call	__fadd
+	push	bc
+	pop	iy
+	ld	d, a
+	ld	bc, (ix - 93)
+	ld	a, (ix - 96)
+	or	a, a
+	sbc	hl, hl
+	ld	e, 64
+	call	__fmul
+	push	bc
+	pop	hl
+	ld	e, a
+	lea	bc, iy
+	ld	a, d
+	push	hl
+	pop	iy
+	ld	d, e
+	call	__fdiv
+	ld	(ix - 93), bc
+	ld	l, a
+	ld	(ix - 96), hl
+	ld	bc, (ix - 86)
+	ld	a, (ix - 87)
+	ld	hl, -8388608
+	ld	e, -65
+	call	__fmul
+	ld	hl, (ix - 124)
+	ld	e, (ix - 125)
+	call	__fsub
+	lea	hl, iy
+	ld	e, d
+	call	__fdiv
+	ld	l, a
+	push	hl
+	push	bc
+	ld	hl, (ix - 83)
+	push	hl
+	call	_os_FloatToReal
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	de, (ix - 118)
+	ld	iy, (ix - 83)
+	lea	hl, iy
+	ld	bc, 9
+	ldir
+	ld	hl, (ix - 96)
+	push	hl
+	ld	hl, (ix - 93)
+	push	hl
+	push	iy
+	call	_os_FloatToReal
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	de, (ix - 121)
+	ld	hl, (ix - 83)
+	ld	bc, 9
+	ldir
+	ld	(ix - 20), 0
+	ld	iy, (ix - 80)
+	lea	de, iy
+	inc	de
+	ld	(ix - 86), de
+	lea	hl, iy
+	ld	bc, 19
+	ldir
+	ld	hl, 9
+	push	hl
+	or	a, a
+	sbc	hl, hl
+	push	hl
+	ld	hl, 8
+	push	hl
+	ld	hl, (ix - 118)
+	push	hl
+	push	iy
+	call	_os_RealToStr
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	hl, _.str.5
+	push	hl
+	call	_os_PutStrFull
+	pop	hl
+	ld	hl, (ix - 80)
+	push	hl
+	call	_os_PutStrFull
+	pop	hl
+	ld	iy, -3145600
+	call	_os_NewLine
+	ld	(ix - 20), 0
+	ld	de, (ix - 86)
+	ld	iy, (ix - 80)
+	lea	hl, iy
+	ld	bc, 19
+	ldir
+	ld	hl, 9
+	push	hl
+	or	a, a
+	sbc	hl, hl
+	push	hl
+	ld	hl, 8
+	push	hl
+	ld	hl, (ix - 121)
+	push	hl
+	push	iy
+	call	_os_RealToStr
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	hl, _.str.5
+	push	hl
+	call	_os_PutStrFull
+	pop	hl
+	ld	hl, (ix - 80)
+BB0_3:
+	push	hl
+	call	_os_PutStrFull
+	pop	hl
+BB0_4:
+	call	_os_GetCSC
+	cp	a, 15
+	jr	z, BB0_6
+	cp	a, 54
+	jp	z, BB0_1
+	jr	BB0_4
+BB0_6:
+	or	a, a
+	sbc	hl, hl
+	ld	sp, ix
+	pop	ix
+	ret
+	section	.text,"ax",@progbits
+
+	section	.rodata,"a",@progbits
+	private	_.str
+_.str:
+	db	"(C) TI-PI-Plus-C 2026", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.1
+_.str.1:
+	db	"Quadratic Equation Solver:", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.2
+_.str.2:
+	db	"A= ", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.3
+_.str.3:
+	db	"B= ", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.4
+_.str.4:
+	db	"C= ", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.5
+_.str.5:
+	db	"X= ", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.6
+_.str.6:
+	db	"Roots are imaginary.", 0
+
+	ident	"clang version 15.0.7 (https://github.com/CE-Programming/llvm-project 31b787336940cbc96d054033c3d843f344507042)"
+	extern	_os_StrToReal
+	extern	__frameset
+	extern	__Unwind_SjLj_Register
+	extern	__Unwind_SjLj_Unregister
+	extern	_os_FloatToReal
+	extern	_os_PutStrFull
+	extern	__fdiv
+	extern	__fadd
+	extern	_os_NewLine
+	extern	_os_GetStringInput
+	extern	_sqrt
+	extern	_os_GetCSC
+	extern	_os_ClrLCD
+	extern	_os_RealToStr
+	extern	__fcmp
+	extern	_os_DrawStatusBar
+	extern	_os_HomeUp
+	extern	__fsub
+	extern	__fmul
+	extern	_os_RealToFloat
