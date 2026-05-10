@@ -3,24 +3,25 @@
 	section	.text,"ax",@progbits
 	public	_main
 _main:
-	ld	hl, -125
+	ld	hl, -134
 	call	__frameset
-	lea	hl, ix - 20
-	ld	(ix - 80), hl
-	lea	hl, ix - 29
-	ld	(ix - 109), hl
-	lea	hl, ix - 38
-	ld	(ix - 112), hl
-	lea	hl, ix - 47
-	ld	(ix - 115), hl
-	lea	hl, ix - 56
-	ld	(ix - 118), hl
-	lea	hl, ix - 65
-	ld	(ix - 121), hl
-	lea	hl, ix - 68
-	ld	(ix - 90), hl
-	lea	hl, ix - 77
+	lea	hl, ix - 26
 	ld	(ix - 83), hl
+	lea	hl, ix - 35
+	ld	(ix - 124), hl
+	lea	hl, ix - 44
+	ld	(ix - 127), hl
+	lea	hl, ix - 53
+	ld	bc, -130
+	lea	iy, ix
+	add	iy, bc
+	ld	(iy), hl
+	lea	hl, ix - 62
+	ld	(ix - 111), hl
+	lea	hl, ix - 71
+	ld	(ix - 114), hl
+	lea	hl, ix - 80
+	ld	(ix - 86), hl
 BB0_1:
 	ld	hl, -3145600
 	push	hl
@@ -41,115 +42,135 @@ BB0_1:
 	pop	hl
 	ld	iy, -3145600
 	call	_os_NewLine
+	ld	(ix - 26), 0
+	ld	iy, (ix - 83)
+	lea	de, iy
+	inc	de
+	ld	(ix - 89), de
+	lea	hl, iy
+	ld	bc, 19
+	ldir
 	ld	hl, 20
 	push	hl
-	ld	hl, (ix - 80)
-	push	hl
+	push	iy
 	ld	hl, _.str.2
 	push	hl
-	call	_os_GetStringInput
+	call	_GetNumInput
 	pop	hl
 	pop	hl
 	pop	hl
-	ld	hl, (ix - 90)
-	push	hl
-	ld	hl, (ix - 80)
+	ld	hl, 0
 	push	hl
 	ld	hl, (ix - 83)
+	push	hl
+	ld	hl, (ix - 86)
 	push	hl
 	call	_os_StrToReal
 	pop	hl
 	pop	hl
 	pop	hl
-	ld	iy, (ix - 109)
+	ld	iy, (ix - 124)
 	lea	de, iy
-	ld	hl, (ix - 83)
+	ld	hl, (ix - 86)
 	ld	bc, 9
 	ldir
 	push	iy
 	call	_os_RealToFloat
-	ld	(ix - 93), hl
-	ld	(ix - 96), e
+	ld	(ix - 98), hl
+	ld	(ix - 101), e
 	pop	hl
 	ld	iy, -3145600
 	call	_os_NewLine
+	ld	(ix - 26), 0
+	ld	de, (ix - 89)
+	ld	iy, (ix - 83)
+	lea	hl, iy
+	ld	bc, 19
+	ldir
 	ld	hl, 20
 	push	hl
-	ld	hl, (ix - 80)
-	push	hl
+	push	iy
 	ld	hl, _.str.3
 	push	hl
-	call	_os_GetStringInput
+	call	_GetNumInput
 	pop	hl
 	pop	hl
 	pop	hl
-	ld	hl, (ix - 90)
-	push	hl
-	ld	hl, (ix - 80)
+	ld	hl, 0
 	push	hl
 	ld	hl, (ix - 83)
+	push	hl
+	ld	hl, (ix - 86)
 	push	hl
 	call	_os_StrToReal
 	pop	hl
 	pop	hl
 	pop	hl
-	ld	iy, (ix - 112)
+	ld	iy, (ix - 127)
 	lea	de, iy
-	ld	hl, (ix - 83)
+	ld	hl, (ix - 86)
 	ld	bc, 9
 	ldir
 	push	iy
 	call	_os_RealToFloat
-	ld	(ix - 86), hl
-	ld	(ix - 87), e
+	ld	(ix - 92), hl
+	ld	(ix - 95), e
 	pop	hl
 	ld	iy, -3145600
 	call	_os_NewLine
+	ld	(ix - 26), 0
+	ld	de, (ix - 89)
+	ld	iy, (ix - 83)
+	lea	hl, iy
+	ld	bc, 19
+	ldir
 	ld	hl, 20
 	push	hl
-	ld	hl, (ix - 80)
-	push	hl
+	push	iy
 	ld	hl, _.str.4
 	push	hl
-	call	_os_GetStringInput
+	call	_GetNumInput
 	pop	hl
 	pop	hl
 	pop	hl
-	ld	hl, (ix - 90)
-	push	hl
-	ld	hl, (ix - 80)
+	ld	hl, 0
 	push	hl
 	ld	hl, (ix - 83)
+	push	hl
+	ld	hl, (ix - 86)
 	push	hl
 	call	_os_StrToReal
 	pop	hl
 	pop	hl
 	pop	hl
-	ld	iy, (ix - 115)
+	ld	bc, -130
+	lea	hl, ix
+	add	hl, bc
+	ld	iy, (hl)
 	lea	de, iy
-	ld	hl, (ix - 83)
+	ld	hl, (ix - 86)
 	ld	bc, 9
 	ldir
 	push	iy
 	call	_os_RealToFloat
-	ld	(ix - 99), hl
-	ld	(ix - 100), e
+	ld	(ix - 107), hl
+	ld	(ix - 108), e
 	pop	hl
 	ld	iy, -3145600
 	call	_os_NewLine
-	ld	bc, (ix - 93)
-	ld	a, (ix - 96)
+	ld	bc, (ix - 98)
+	ld	a, (ix - 101)
 	ld	hl, -8388608
 	ld	e, -64
 	call	__fmul
-	ld	hl, (ix - 99)
-	ld	e, (ix - 100)
+	ld	hl, (ix - 107)
+	ld	e, (ix - 108)
 	call	__fmul
 	push	bc
 	pop	iy
 	ld	d, a
-	ld	bc, (ix - 86)
-	ld	a, (ix - 87)
+	ld	bc, (ix - 92)
+	ld	a, (ix - 95)
 	push	bc
 	pop	hl
 	ld	e, a
@@ -157,127 +178,232 @@ BB0_1:
 	lea	hl, iy
 	ld	e, d
 	call	__fadd
-	ld	(ix - 103), bc
+	ld	(ix - 118), bc
 	ld	l, a
-	ld	(ix - 106), hl
+	ld	(ix - 121), hl
 	push	hl
 	push	bc
 	call	_sqrt
-	ld	(ix - 124), hl
-	ld	(ix - 125), e
+	ld	bc, -133
+	lea	iy, ix
+	add	iy, bc
+	ld	(iy), hl
+	push	ix
+	dec	bc
+	add	ix, bc
+	ld	(ix), e
+	pop	ix
 	pop	hl
 	pop	hl
-	ld	hl, (ix - 106)
-	push	hl
-	ld	hl, (ix - 103)
-	push	hl
-	call	_sqrt
-	ld	(ix - 103), hl
-	ld	(ix - 106), e
-	pop	hl
-	pop	hl
-	ld	iy, -3145600
-	call	_os_NewLine
-	ld	bc, (ix - 93)
-	ld	a, (ix - 96)
-	ld	hl, (ix - 99)
-	ld	e, (ix - 100)
-	call	__fmul
-	ld	hl, -8388608
-	ld	e, -64
-	call	__fmul
-	push	bc
-	pop	iy
-	ld	d, a
-	ld	bc, (ix - 86)
-	ld	a, (ix - 87)
-	push	bc
-	pop	hl
-	ld	e, a
-	call	__fmul
-	lea	hl, iy
-	ld	e, d
-	call	__fadd
-	push	bc
-	pop	hl
-	ld	e, a
-	ld	bc, 0
-	xor	a, a
-	call	__fcmp
-	ld	hl, _.str.6
-	jp	m, BB0_3
-	ld	bc, (ix - 86)
-	ld	a, (ix - 87)
-	ld	hl, -8388608
-	ld	e, -65
-	call	__fmul
-	ld	hl, (ix - 103)
-	ld	e, (ix - 106)
-	call	__fadd
-	push	bc
-	pop	iy
-	ld	d, a
-	ld	bc, (ix - 93)
-	ld	a, (ix - 96)
+	ld	bc, (ix - 98)
+	ld	a, (ix - 101)
 	or	a, a
 	sbc	hl, hl
 	ld	e, 64
 	call	__fmul
+	ld	(ix - 104), bc
+	ld	(ix - 115), a
+	ld	hl, (ix - 121)
+	push	hl
+	ld	hl, (ix - 118)
+	push	hl
+	call	_sqrt
+	ld	(ix - 118), hl
+	ld	(ix - 121), e
+	pop	hl
+	pop	hl
+	ld	iy, -3145600
+	call	_os_NewLine
+	ld	bc, (ix - 98)
+	ld	a, (ix - 101)
+	ld	hl, (ix - 107)
+	ld	e, (ix - 108)
+	call	__fmul
+	ld	hl, -8388608
+	ld	e, -64
+	call	__fmul
+	push	bc
+	pop	iy
+	ld	d, a
+	ld	bc, (ix - 92)
+	ld	a, (ix - 95)
 	push	bc
 	pop	hl
 	ld	e, a
+	call	__fmul
+	lea	hl, iy
+	ld	e, d
+	call	__fadd
+	push	bc
+	pop	iy
+	ld	d, a
+	lea	hl, iy
+	ld	e, d
+	ld	bc, 0
+	xor	a, a
+	call	__fcmp
+	jp	p, BB0_3
+	ld	bc, (ix - 92)
+	ld	a, (ix - 95)
+	call	__fneg
+	ld	hl, (ix - 104)
+	ld	e, (ix - 115)
+	call	__fdiv
+	ld	(ix - 92), bc
+	ld	l, a
+	ld	(ix - 95), hl
 	lea	bc, iy
 	ld	a, d
-	push	hl
-	pop	iy
-	ld	d, e
-	call	__fdiv
-	ld	(ix - 93), bc
+	call	__fneg
 	ld	l, a
-	ld	(ix - 96), hl
-	ld	bc, (ix - 86)
-	ld	a, (ix - 87)
-	ld	hl, -8388608
-	ld	e, -65
-	call	__fmul
-	ld	hl, (ix - 124)
-	ld	e, (ix - 125)
-	call	__fsub
+	push	hl
+	push	bc
+	call	_sqrt
+	push	hl
+	pop	bc
+	ld	a, e
+	pop	hl
+	pop	hl
+	ld	hl, (ix - 104)
+	ld	e, (ix - 115)
+	call	__fdiv
+	ld	(ix - 98), bc
+	ld	l, a
+	ld	(ix - 101), hl
+	ld	hl, (ix - 95)
+	push	hl
+	ld	hl, (ix - 92)
+	push	hl
+	ld	hl, (ix - 86)
+	push	hl
+	call	_os_FloatToReal
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	de, (ix - 111)
+	ld	iy, (ix - 86)
 	lea	hl, iy
+	ld	bc, 9
+	ldir
+	ld	hl, (ix - 101)
+	push	hl
+	ld	hl, (ix - 98)
+	push	hl
+	push	iy
+	call	_os_FloatToReal
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	de, (ix - 114)
+	ld	hl, (ix - 86)
+	ld	bc, 9
+	ldir
+	ld	(ix - 26), 0
+	ld	de, (ix - 89)
+	ld	iy, (ix - 83)
+	lea	hl, iy
+	ld	bc, 19
+	ldir
+	ld	hl, 9
+	push	hl
+	or	a, a
+	sbc	hl, hl
+	push	hl
+	ld	hl, 8
+	push	hl
+	ld	hl, (ix - 111)
+	push	hl
+	push	iy
+	call	_os_RealToStr
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	pop	hl
+	ld	hl, (ix - 83)
+	push	hl
+	call	_os_PutStrFull
+	pop	hl
+	ld	hl, _.str.6
+	push	hl
+	call	_os_PutStrFull
+	pop	hl
+	ld	iy, (ix - 83)
+	ld	(ix - 95), iy
+	ld	hl, _.str.7
+	ld	(ix - 92), hl
+	jp	BB0_4
+BB0_3:
+	ld	bc, (ix - 92)
+	push	af
+	ld	a, (ix - 95)
+	ld	iyl, a
+	pop	af
+	ld	a, iyl
+	ld	hl, -8388608
+	ld	iyh, -65
+	ld	e, iyh
+	call	__fmul
+	ld	hl, (ix - 118)
+	ld	e, (ix - 121)
+	call	__fadd
+	ld	hl, (ix - 104)
+	ld	d, (ix - 115)
+	ld	e, d
+	call	__fdiv
+	ld	(ix - 98), bc
+	ld	l, a
+	ld	(ix - 101), hl
+	ld	bc, (ix - 92)
+	ld	a, iyl
+	ld	hl, -8388608
+	ld	e, iyh
+	call	__fmul
+	ld	(ix - 3), bc
+	ld	bc, -133
+	lea	iy, ix
+	add	iy, bc
+	ld	hl, (iy)
+	push	ix
+	dec	bc
+	add	ix, bc
+	ld	e, (ix)
+	pop	ix
+	ld	bc, (ix - 3)
+	call	__fsub
+	ld	hl, (ix - 104)
 	ld	e, d
 	call	__fdiv
 	ld	l, a
 	push	hl
 	push	bc
-	ld	hl, (ix - 83)
+	ld	hl, (ix - 86)
 	push	hl
 	call	_os_FloatToReal
 	pop	hl
 	pop	hl
 	pop	hl
-	ld	de, (ix - 118)
-	ld	iy, (ix - 83)
+	ld	de, (ix - 111)
+	ld	iy, (ix - 86)
 	lea	hl, iy
 	ld	bc, 9
 	ldir
-	ld	hl, (ix - 96)
+	ld	hl, (ix - 101)
 	push	hl
-	ld	hl, (ix - 93)
+	ld	hl, (ix - 98)
 	push	hl
 	push	iy
 	call	_os_FloatToReal
 	pop	hl
 	pop	hl
 	pop	hl
-	ld	de, (ix - 121)
-	ld	hl, (ix - 83)
+	ld	de, (ix - 114)
+	ld	hl, (ix - 86)
 	ld	bc, 9
 	ldir
-	ld	(ix - 20), 0
-	ld	iy, (ix - 80)
-	lea	de, iy
-	inc	de
-	ld	(ix - 86), de
+	ld	(ix - 26), 0
+	ld	de, (ix - 89)
+	ld	iy, (ix - 83)
 	lea	hl, iy
 	ld	bc, 19
 	ldir
@@ -288,7 +414,7 @@ BB0_1:
 	push	hl
 	ld	hl, 8
 	push	hl
-	ld	hl, (ix - 118)
+	ld	hl, (ix - 111)
 	push	hl
 	push	iy
 	call	_os_RealToStr
@@ -301,15 +427,19 @@ BB0_1:
 	push	hl
 	call	_os_PutStrFull
 	pop	hl
-	ld	hl, (ix - 80)
+	ld	hl, (ix - 83)
 	push	hl
 	call	_os_PutStrFull
 	pop	hl
 	ld	iy, -3145600
 	call	_os_NewLine
-	ld	(ix - 20), 0
-	ld	de, (ix - 86)
-	ld	iy, (ix - 80)
+	ld	hl, _.str.5
+	ld	(ix - 95), hl
+	ld	iy, (ix - 83)
+	ld	(ix - 92), iy
+BB0_4:
+	ld	(ix - 26), 0
+	ld	de, (ix - 89)
 	lea	hl, iy
 	ld	bc, 19
 	ldir
@@ -320,7 +450,7 @@ BB0_1:
 	push	hl
 	ld	hl, 8
 	push	hl
-	ld	hl, (ix - 121)
+	ld	hl, (ix - 114)
 	push	hl
 	push	iy
 	call	_os_RealToStr
@@ -329,25 +459,94 @@ BB0_1:
 	pop	hl
 	pop	hl
 	pop	hl
-	ld	hl, _.str.5
+	ld	hl, (ix - 95)
 	push	hl
 	call	_os_PutStrFull
 	pop	hl
-	ld	hl, (ix - 80)
-BB0_3:
+	ld	hl, (ix - 92)
 	push	hl
 	call	_os_PutStrFull
 	pop	hl
-BB0_4:
+BB0_5:
 	call	_os_GetCSC
 	cp	a, 15
-	jr	z, BB0_6
+	jr	z, BB0_7
 	cp	a, 54
 	jp	z, BB0_1
-	jr	BB0_4
-BB0_6:
+	jr	BB0_5
+BB0_7:
 	or	a, a
 	sbc	hl, hl
+	ld	sp, ix
+	pop	ix
+	ret
+	section	.text,"ax",@progbits
+
+	section	.text,"ax",@progbits
+	public	_GetNumInput
+_GetNumInput:
+	ld	hl, -3
+	call	__frameset
+	ld	hl, (ix + 6)
+	ld	de, 0
+	ld	(ix - 3), de
+	push	hl
+	call	_os_PutStrFull
+	pop	hl
+BB1_1:
+	call	_os_GetCSC
+	cp	a, 9
+	jr	z, BB1_6
+	ld	hl, (ix + 12)
+	ld	de, (ix - 3)
+	or	a, a
+	sbc	hl, de
+	call	pe, __setflag
+	jp	m, BB1_1
+	add	a, -17
+	ld	d, a
+	cp	a, 20
+	jr	nc, BB1_1
+	ld	bc, 986895
+	ld	iyl, 0
+	ld	a, iyl
+	ld	l, d
+	call	__lshru
+	push	bc
+	pop	hl
+	ld	e, a
+	ld	bc, 1
+	ld	a, iyl
+	call	__land
+	bit	0, l
+	jr	z, BB1_1
+	ld	bc, 0
+	ld	c, d
+	ld	hl, _switch.table.GetNumInput
+	add	hl, bc
+	ld	a, (hl)
+	push	bc
+	pop	hl
+	ld	bc, 3
+	call	__imulu
+	push	hl
+	pop	de
+	ld	hl, _switch.table.GetNumInput.20
+	add	hl, de
+	ld	de, (hl)
+	ld	hl, (ix + 9)
+	ld	bc, (ix - 3)
+	add	hl, bc
+	ld	(hl), a
+	push	de
+	call	_os_PutStrFull
+	pop	hl
+	ld	hl, (ix - 3)
+	inc	hl
+	ld	(ix - 3), hl
+	jr	BB1_1
+BB1_6:
+	ld	hl, (ix + 9)
 	ld	sp, ix
 	pop	ix
 	ret
@@ -386,26 +585,124 @@ _.str.5:
 	section	.rodata,"a",@progbits
 	private	_.str.6
 _.str.6:
-	db	"Roots are imaginary.", 0
+	db	" +/- ", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.7
+_.str.7:
+	db	"i", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.8
+_.str.8:
+	db	"0", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.9
+_.str.9:
+	db	"1", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.10
+_.str.10:
+	db	"2", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.11
+_.str.11:
+	db	"3", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.12
+_.str.12:
+	db	"4", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.13
+_.str.13:
+	db	"5", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.14
+_.str.14:
+	db	"6", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.15
+_.str.15:
+	db	"7", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.16
+_.str.16:
+	db	"8", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.17
+_.str.17:
+	db	"9", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.18
+_.str.18:
+	db	".", 0
+
+	section	.rodata,"a",@progbits
+	private	_.str.19
+_.str.19:
+	db	"-", 0
+
+	section	.rodata,"a",@progbits
+	private	_switch.table.GetNumInput
+_switch.table.GetNumInput:
+	db	"-3690000.25800000147"
+
+	section	.rodata,"a",@progbits
+	private	_switch.table.GetNumInput.20
+_switch.table.GetNumInput.20:
+	dl	_.str.19
+	dl	_.str.11
+	dl	_.str.14
+	dl	_.str.17
+	dl	_.str.8
+	dl	_.str.8
+	dl	_.str.8
+	dl	_.str.8
+	dl	_.str.18
+	dl	_.str.10
+	dl	_.str.13
+	dl	_.str.16
+	dl	_.str.8
+	dl	_.str.8
+	dl	_.str.8
+	dl	_.str.8
+	dl	_.str.8
+	dl	_.str.9
+	dl	_.str.12
+	dl	_.str.15
 
 	ident	"clang version 15.0.7 (https://github.com/CE-Programming/llvm-project 31b787336940cbc96d054033c3d843f344507042)"
 	extern	_os_StrToReal
-	extern	__frameset
 	extern	__Unwind_SjLj_Register
-	extern	__Unwind_SjLj_Unregister
-	extern	_os_FloatToReal
-	extern	_os_PutStrFull
-	extern	__fdiv
+	extern	__frameset
 	extern	__fadd
-	extern	_os_NewLine
-	extern	_os_GetStringInput
 	extern	_sqrt
-	extern	_os_GetCSC
 	extern	_os_ClrLCD
 	extern	_os_RealToStr
-	extern	__fcmp
 	extern	_os_DrawStatusBar
+	extern	__fmul
+	extern	__setflag
+	extern	__Unwind_SjLj_Unregister
+	extern	_os_FloatToReal
+	extern	__fneg
+	extern	_os_PutStrFull
+	extern	__fdiv
+	extern	__imulu
+	extern	_os_NewLine
+	extern	__land
+	extern	_os_GetCSC
+	extern	__fcmp
+	extern	__lshru
 	extern	_os_HomeUp
 	extern	__fsub
-	extern	__fmul
 	extern	_os_RealToFloat
