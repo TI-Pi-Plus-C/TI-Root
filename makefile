@@ -2,12 +2,12 @@
 # Makefile Options
 # ----------------------------
 
-NAME = QUAD
+NAME = ROOTS
 ICON = icon.png
-DESCRIPTION = "Program to Solve Quadratic Equations"
+DESCRIPTION = "v1.2.0 (C) TI-PI-Plus-C 2026"
 COMPRESSED = YES
 
-CFLAGS = -Wall -Wextra -Oz -Os
+CFLAGS = -Wall -Wextra -Oz
 CXXFLAGS = -Wall -Wextra -Oz
 
 # ----------------------------
